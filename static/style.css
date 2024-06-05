@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Rubik", sans-serif;
+}
+
+.parent{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    top: 1px;
+    width: 98vw;
+}
+
+.titre{
+    color: white;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+h3{
+    margin: 3rem 0 2rem;
+}
+
+input{
+    outline: none;
+    padding: 13px 19px;
+    width: 100%;
+    color: black;
+    border-radius: 10px 0 0 10px;
+    border-color: transparent;
+}
+
+.but{
+    height: 100%;
+    margin-left: 1px;
+    background-color: black;
+    padding: 13px 19px;
+    border-radius: 0 10px 10px 0;
+    transition-delay: 60ms;
+    transition-duration: 80ms;
+}
+
+#map{
+    height: 80vh;
+    z-index:0;
+    margin: 0;
+    padding: 0;
+}
+
+.tab{
+    display: flex;
+    background-color: white;
+    padding:2rem;
+    margin: 0;
+    z-index: 100;
+    border-radius: 8px;
+    width: 65vw;    
+    align-items: center;
+}
+
+.tab .info{
+    display: flex;
+    align-items: flex-start;
+    flex-direction:column;
+    margin-right: 170px;
+    width: 1000px;
+}
+
+.info h3{
+    margin: 0;
+    margin-bottom: 15px;
+    text-transform:uppercase;
+    color: gray;
+    white-space: nowrap;
+}
+
+.pic{
+    margin: 0;
+    padding: 0;
+}
+
+.pic img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.but:hover{
+    cursor: pointer;
+    background-color: rgb(44, 44, 44);
+}
