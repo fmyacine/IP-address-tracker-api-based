@@ -10,12 +10,12 @@ def index():
         ip1st = apiFirst()
         ipRes = apiSearch(ip1st["ip"])
         ipRes["offset"] = int(ipRes["offset"] / 3600)
-        return render_template("layout.html",api=ipRes)
+        return render_template("layout.html",ipRes=ipRes)
     else:
         try:
             ip_obj = ipaddress.ip_address(ip)
             ipRes = apiSearch(ip)
-            return render_template("layout.html",api = ipRes)
+            return render_template("layout.html",ipRes = ipRes)
         except(ValueError):
             flash("ip address invalid!")
             return redirect("/")

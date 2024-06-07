@@ -74,6 +74,7 @@ input{
     flex-direction:column;
     margin-right: 170px;
     width: 1000px;
+    background-color: white;
 }
 
 .info h3{
@@ -98,4 +99,8 @@ input{
 .but:hover{
     cursor: pointer;
     background-color: rgb(44, 44, 44);
+}
+
+.last {
+    margin-right:25px;
 }
