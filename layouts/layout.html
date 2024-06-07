@@ -17,6 +17,14 @@
   <script src="./static/index.js"></script>
 </head>
 <body>
+  {% if get_flashed_messages() %}
+    <header>
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+          {{ get_flashed_messages() | join(" ") }}
+        </div>
+    </header>
+  {% endif %}
+
   <div class="pic">
     <img src="./images/pattern-bg-desktop.png" alt="">
   </div>
@@ -32,19 +40,19 @@
     <div class="tab">
       <div class="info first">
         <h3>ip address</h3>
-        <p>--</p>
+        <p>{{ipRes["query"]}}</p>
       </div>
       <div class="info">
         <h3>location</h3>
-        <p>--</p>
+        <p>{{ipRes["regionName"]}},{{ipRes["city"]}}{{ipRes["zip"]}}</p>
       </div>
       <div class="info">
         <h3>timezone</h3>
-        <p>--</p>
+        <p>UTC {{ipRes["offset"]}}:00 </p>
       </div>
       <div class="info">
         <h3>isp</h3>
-        <p>--</p>
+        <p>{{ipRes["isp"]}}</p>
       </div>
     </div>
   </div>

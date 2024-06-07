@@ -20,7 +20,7 @@ def apiFirst():
 
 
 def apiSearch(query):
-    url = f"http://ip-api.com/json/{query}"
+    url = f"http://ip-api.com/json/{query}?fields=regionName,city,zip,timezone,offset,isp,query"
 
     try:
         response = requests.get(

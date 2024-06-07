@@ -1,5 +1,5 @@
-from flask import Flask, redirect, render_template,request
-from ipaddress import is_global
+from flask import Flask, redirect, render_template,request,flash
+import ipaddress
 from api import apiFirst, apiSearch
 app = Flask(__name__)
 
@@ -9,6 +9,16 @@ def index():
     if not ip:
         ip1st = apiFirst()
         ipRes = apiSearch(ip1st["ip"])
-        return render_template("layout.html",api = ipRes)
+        ipRes["offset"] = int(ipRes["offset"] / 3600)
+        return render_template("layout.html",api=ipRes)
     else:
-        return render_template("layout.html")
+        try:
+            ip_obj = ipaddress.ip_address(ip)
+            ipRes = apiSearch(ip)
+            return render_template("layout.html",api = ipRes)
+        except(ValueError):
+            flash("ip address invalid!")
+            return redirect("/")
+        
+if __name__ == '__main__':
+    app.run(debug=True)
